@@ -1,4 +1,3 @@
-package Transporte;
 import java.io.EOFException;
 import java.io.IOException;
 import java.io.RandomAccessFile;
@@ -6,8 +5,8 @@ import java.io.RandomAccessFile;
 public class Billete {
   static int numBilletes=0;
   int numero;
-  int tipo;  //1-año 2-90 minutos
-  //Para que todos los tipos sean del mismo tamaño se añade un kk al tipo2
+  int tipo;  //1-aï¿½o 2-90 minutos
+  //Para que todos los tipos sean del mismo tamaï¿½o se aï¿½ade un kk al tipo2
   int ano,mes,dia, hora, minuto;  
   int activo;  //1 -sin usar, 0-usado
   String dni; // cliente
@@ -31,7 +30,7 @@ public class Billete {
   Billete(){  }
 
   int getTamanoRegistro(){
-	// tamaño del array con el dni + tamaño de 8 int
+	// tamaï¿½o del array con el dni + tamaï¿½o de 8 int
 	  return (TAMANODNI + 8*4);   
   }
 
@@ -45,9 +44,9 @@ public class Billete {
   }
 
   /**
-   * Elimina del string los caracteres vacíos (0)
+   * Elimina del string los caracteres vacï¿½os (0)
    * @param s
-   * @return el string sin vacíos.
+   * @return el string sin vacï¿½os.
    */
   String eliminarVacios (String s) {
 	  StringBuffer sb= new StringBuffer (s);
@@ -84,8 +83,8 @@ public class Billete {
 	    minuto=f.readInt();
 	    activo=f.readInt();
 	    f.read (dniB,0,TAMANODNI);
-	 //  dni=new String(dniB, "UTF-8"); //convierte el array de bytes en un string con la notación UTF-8
-	    dni=new String(dniB, "ISO-8859-1"); //Mejor 8859 para ñ y acentos.
+	 //  dni=new String(dniB, "UTF-8"); //convierte el array de bytes en un string con la notaciï¿½n UTF-8
+	    dni=new String(dniB, "ISO-8859-1"); //Mejor 8859 para ï¿½ y acentos.
 	    dni=eliminarVacios(dni);
 	    return true;
 	  }catch (EOFException e) {

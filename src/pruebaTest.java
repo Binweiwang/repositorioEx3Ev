@@ -1,6 +1,5 @@
 
 /*CLASE */
-package Transporte;
 
 public class pruebaTest {
 

@@ -1,4 +1,3 @@
-package Transporte;
 import java.io.*;
 
 public class Vuelo {
@@ -22,7 +21,7 @@ public class Vuelo {
 				bw.write(nVuelo+"#"+filas+"#"+columnas);
 				bw.newLine();
 			}catch (Exception e2) {
-				System.out.println("Error en la creación del fichero");
+				System.out.println("Error en la creaciï¿½n del fichero");
 				error=true;
 			}
 		}
@@ -102,7 +101,7 @@ public class Vuelo {
 		int fila=t.leerInt();
 		System.out.print("asiento en la fila:");
 		int asiento=t.leerInt();
-		System.out.print("¿Cuántos asientos?:");
+		System.out.print("ï¿½Cuï¿½ntos asientos?:");
 		int numAsientos=t.leerInt();
 		if (( error=errorVenta(fila, asiento, numAsientos))==0){
 			System.out.println("dni ");

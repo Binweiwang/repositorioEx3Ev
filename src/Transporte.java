@@ -1,4 +1,3 @@
-package Transporte;
 import java.io.*;
 
 public class Transporte {
@@ -9,7 +8,7 @@ public class Transporte {
 	final static double PRECIO1=100;
 	final static double PRECIO2=1;
 
-	final static int AÑO=2023;
+	final static int Aï¿½O=2023;
 
 	void irARegistro(RandomAccessFile f, int pos, int tamReg) throws IOException {
 		  f.seek(pos* tamReg);	  
@@ -24,12 +23,12 @@ public class Transporte {
 		  String dni=t.leerString();
 		  Fecha hoy= new Fecha();
 		  int numero=(int)f.length()/b.getTamanoRegistro();
-  	      b=new Billete(numero, tipo, hoy.año, hoy.mes,hoy.dia,hoy.hora, hoy.minuto, 1,dni);
+  	      b=new Billete(numero, tipo, hoy.aï¿½o, hoy.mes,hoy.dia,hoy.hora, hoy.minuto, 1,dni);
   	      f.seek(f.length());
 		  b.escribir(f);
 		}
 		else 
-			System.out.println("Tipo no válido");
+			System.out.println("Tipo no vï¿½lido");
 	}
 	void detectarIrregularidades()  throws IOException {
 	  File fv= new File(FVIAJES);
@@ -50,13 +49,13 @@ public class Transporte {
 			irARegistro(f, b.numero, b.getTamanoRegistro());
 			b.leer(f);
 			correcto=false;
-			if (b.tipo==1 && b.ano==fViaje.año )
+			if (b.tipo==1 && b.ano==fViaje.aï¿½o )
 			  correcto=true;
 			if (b.tipo==2 && 
 			     new Fecha(b.ano,b.mes, b.dia, b.hora,b.minuto).menor90minutos(fViaje))  
 			  correcto=true;
 			if (!correcto) {
-			  bw.write(b.dni+"#"+b.numero+"#"+fViaje.año+"#"+fViaje.mes
+			  bw.write(b.dni+"#"+b.numero+"#"+fViaje.aï¿½o+"#"+fViaje.mes
 					+"#"+fViaje.dia+"#"+fViaje.hora+"#"+fViaje.minuto);
 			  bw.newLine();
 			  if (b.tipo==2) {
@@ -96,7 +95,7 @@ public class Transporte {
 	    	Teclado t= new Teclado();
 	    	int opc;
 	    	do {
-	    		System.out.println("Menú");
+	    		System.out.println("Menï¿½");
 	    		System.out.println("1-Adquirir Billete");
 	    		System.out.println("2-Detectar Irregularidades");
 	    		System.out.println("3-Total Billetes Cliente ");

@@ -1,6 +1,3 @@
-package Transporte;
-
-
 public class DigitosRecursivo {
 	int contarDigitos(int n, int d) {
 		if (n==0)

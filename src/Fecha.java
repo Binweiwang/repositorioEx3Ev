@@ -1,18 +1,22 @@
-package Transporte;
 import java.util.Calendar;
 import java.util.Date;
 
 public class Fecha {
-  int año, mes, dia, hora, minuto;
+  int aï¿½o, mes, dia, hora, minuto;
   Fecha() {
 		 Calendar calendario=Calendar.getInstance();  //Calendar: clase abstracta
 		 Date fecha=calendario.getTime();
 		 calendario.setTime(fecha);
-		 año=calendario.get(Calendar.YEAR);
+		 aï¿½o=calendario.get(Calendar.YEAR);
 		 mes=calendario.get(Calendar.MONTH)+1;
 		 dia=calendario.get(Calendar.DAY_OF_MONTH);
 		 hora=calendario.get(Calendar.HOUR_OF_DAY);
 		 minuto=calendario.get(Calendar.MINUTE);
+	}
+	Fecha(int ano, int mes, int dia){
+	  this.aï¿½o = ano;
+	  this.mes = mes;
+	  this.dia =dia;
 	}
 
   	boolean menor90minutos(Fecha fPosterior) {
@@ -21,13 +25,13 @@ public class Fecha {
   		int auxhPost= fPosterior.hora*60+fPosterior.minuto;
   		System.out.println(fPosterior.hora+":"+fPosterior.minuto+",,"
   		  +auxh+" ->"+auxhPost);
-  		if (año==fPosterior.año && mes==fPosterior.mes && 
+  		if (aï¿½o==fPosterior.aï¿½o && mes==fPosterior.mes && 
   				dia==fPosterior.dia && auxhPost<=auxh)
   			ok=true;
   		return ok;	
   	}
-	public Fecha(int año, int mes, int dia, int hora, int minuto) {
-	  this.año = año;
+	public Fecha(int aï¿½o, int mes, int dia, int hora, int minuto) {
+	  this.aï¿½o = aï¿½o;
 	  this.mes = mes;
 	  this.dia = dia;
 	  this.hora = hora;
@@ -36,7 +40,7 @@ public class Fecha {
 
 	public static void main(String[] args) {
 		Fecha f= new Fecha();
-		System.out.println(f.año+":"+f.mes+":"+f.dia+":"+f.hora+":"+
+		System.out.println(f.aï¿½o+":"+f.mes+":"+f.dia+":"+f.hora+":"+
 		f.minuto);
 	}
 
